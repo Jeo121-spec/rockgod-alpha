@@ -34,3 +34,14 @@ Upload `index.html` and the entire `assets/` directory to the root of the existi
 ## V0.4.1.2 micro-patch
 - Beard reference portraits now use a muted grayscale / lower-contrast treatment to better match the Hair portrait set across Current Beard, Target Beard and downstream reference cards.
 - No flow, recommendation, copy or commercial logic changes in this patch.
+
+
+## V0.4.1.2 locked visual treatment
+
+Approved portrait rule:
+- same face identity and lighting across hair and beard rows
+- eyes and nose softened/recessive
+- hair/beard remain the strongest visual feature
+- black/charcoal background with muted grayscale portrait treatment
+- this approved treatment is now embedded in the hair and beard assets
+
