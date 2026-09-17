@@ -1,23 +1,31 @@
-# RockGod® Build Engine Alpha V0.3
+# RockGod® Build Engine Alpha V0.4
 
 Static mobile-first customer prototype. It does not process payments, send emails, or store personal data.
 
-## V0.3 changes
-- Keeps Current Hair and Current Beard as separate focused steps.
-- Normalises grayscale portrait treatment and improves beard framing/cropping on mobile.
-- Adds stronger Target Hair / Target Beard section framing and plain-English prompts.
-- Simplifies Nemesis wording to customer-observable symptoms: messy/fluffy, dry/rough, flat, hard to style, style does not last, rough beard, or maintenance.
-- Keeps the new “What’s been holding you back?” barrier step.
-- Adds a 16-slot Final Build portrait matrix in the code (`final-H-B.webp`). For V0.3 the slots intentionally use the same concept portrait so they can be replaced one-for-one with bespoke consistent images without changing the site logic.
-- Keeps the detailed personalised Loadout summary.
-- Expands the conversion screen with a £9.95 founding-offer test, illustrative crossed-out £24.95 reference price, trust cues, wallet-checkout mock buttons, and a “Continue Your Quest” email-capture demo.
+## V0.4 focus
+This release is the visual-integration pass requested after the V0.3 phone review. It deliberately does **not** redesign the product-recommendation decision framework yet.
+
+### What changed
+- Unified the grayscale portrait treatment for Current Hair, Current Beard, Target Hair and Target Beard.
+- Fixed mobile beard framing so the full beard remains visible rather than being cropped by the card.
+- Added 16 working Final Build images (`final-H-B.webp`): 4 hair states × 4 beard states.
+- Step 4 now dynamically displays the selected hair + beard combination.
+- The same selected Final Build now carries through to Step 7 / the Loadout summary.
+- The same selected Final Build also appears on the £9.95 founding-offer screen, preserving the customer's visual Build through conversion.
+- Kept the stronger Target Hair / Target Beard framing, simplified Nemesis wording, barrier step, £9.95 offer, wallet mock buttons and Continue Your Quest route.
+
+## Deliberately next
+- Recommendation decision framework: map Current Build + Target Build + Nemesis + Barrier to a justified product/routine recommendation.
+- Final supplier-confirmed product names, formulas, claims, costs and sample sizes.
+- Real checkout / Apple Pay / Google Pay integration via the eventual commerce platform.
+- Final production-grade portrait art can replace the 16 Alpha composites one-for-one without changing the website logic.
 
 ## Important prototype caveats
-- The crossed-out £24.95 is explicitly an illustrative prototype reference price, not an established previous selling price. Do not publish it as a real discount until it can be substantiated.
+- £24.95 is an illustrative prototype reference price, not an established previous selling price. Do not publish it as a real discount until it can be substantiated.
 - Wallet buttons are visual demos only.
 - Email is validated locally but not transmitted or stored.
-- Product names, formulas, claims, sample sizes, postage and economics remain hypotheses pending Options/supplier validation.
-- Supplier-dependent claims such as UK-made, vegan, cruelty-free, organic or similar are intentionally not asserted until confirmed.
+- Product recommendations remain provisional until the decision framework is designed and supplier/product testing is complete.
+- Supplier-dependent claims such as UK-made, vegan, cruelty-free or organic are intentionally not asserted until confirmed.
 
 ## Publish
-Upload `index.html` and the entire `assets/` directory to the root of the existing GitHub Pages repository and commit. GitHub Pages should redeploy automatically.
+Upload `index.html` and the entire `assets/` directory to the root of the existing GitHub Pages repository and commit with a message such as `Update to RockGod Alpha V0.4`. GitHub Pages should redeploy automatically.
