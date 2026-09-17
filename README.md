@@ -1,8 +1,8 @@
-# RockGod® Build Engine Alpha V0.4.1.2
+# RockGod® Build Engine Alpha V0.4.1.3
 
 Static mobile-first customer prototype. It does not process payments, send emails, or store personal data.
 
-## V0.4.1.2 focus
+## V0.4.1.3 focus
 This release is the visual-integration pass requested after the V0.3 phone review. It deliberately does **not** redesign the product-recommendation decision framework yet.
 
 ### What changed
@@ -28,15 +28,15 @@ This release is the visual-integration pass requested after the V0.3 phone revie
 - Supplier-dependent claims such as UK-made, vegan, cruelty-free or organic are intentionally not asserted until confirmed.
 
 ## Publish
-Upload `index.html` and the entire `assets/` directory to the root of the existing GitHub Pages repository and commit with a message such as `Update to RockGod Alpha V0.4.1.2`. GitHub Pages should redeploy automatically.
+Upload `index.html` and the entire `assets/` directory to the root of the existing GitHub Pages repository and commit with a message such as `Update to RockGod Alpha V0.4.1.3`. GitHub Pages should redeploy automatically.
 
 
-## V0.4.1.2 micro-patch
+## V0.4.1.3 micro-patch
 - Beard reference portraits now use a muted grayscale / lower-contrast treatment to better match the Hair portrait set across Current Beard, Target Beard and downstream reference cards.
 - No flow, recommendation, copy or commercial logic changes in this patch.
 
 
-## V0.4.1.2 locked visual treatment
+## V0.4.1.3 locked visual treatment
 
 Approved portrait rule:
 - same face identity and lighting across hair and beard rows
@@ -45,3 +45,12 @@ Approved portrait rule:
 - black/charcoal background with muted grayscale portrait treatment
 - this approved treatment is now embedded in the hair and beard assets
 
+
+## Definitive V0.4.1.3 asset fix
+
+This package is the corrected V0.4.1.3 release.
+
+- Approved softened hair and beard assets are embedded in `/assets`.
+- No additional beard-only CSS darkening/filter is applied.
+- Hair and beard rows now use the same visual treatment in the website.
+- Use this package instead of the earlier V0.4.1.3 / V0.4.1.3 LOCKED ZIPs.
