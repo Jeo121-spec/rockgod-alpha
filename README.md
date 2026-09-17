@@ -1,8 +1,8 @@
-# RockGod® Build Engine Alpha V0.4.1.6
+# RockGod® Build Engine Alpha V0.4.1.7
 
 Static mobile-first customer prototype. It does not process payments, send emails, or store personal data.
 
-## V0.4.1.6 focus
+## V0.4.1.7 focus
 This release is the visual-integration pass requested after the V0.3 phone review. It deliberately does **not** redesign the product-recommendation decision framework yet.
 
 ### What changed
@@ -28,15 +28,15 @@ This release is the visual-integration pass requested after the V0.3 phone revie
 - Supplier-dependent claims such as UK-made, vegan, cruelty-free or organic are intentionally not asserted until confirmed.
 
 ## Publish
-Upload `index.html` and the entire `assets/` directory to the root of the existing GitHub Pages repository and commit with a message such as `Update to RockGod Alpha V0.4.1.6`. GitHub Pages should redeploy automatically.
+Upload `index.html` and the entire `assets/` directory to the root of the existing GitHub Pages repository and commit with a message such as `Update to RockGod Alpha V0.4.1.7`. GitHub Pages should redeploy automatically.
 
 
-## V0.4.1.6 micro-patch
+## V0.4.1.7 micro-patch
 - Beard reference portraits now use a muted grayscale / lower-contrast treatment to better match the Hair portrait set across Current Beard, Target Beard and downstream reference cards.
 - No flow, recommendation, copy or commercial logic changes in this patch.
 
 
-## V0.4.1.6 locked visual treatment
+## V0.4.1.7 locked visual treatment
 
 Approved portrait rule:
 - same face identity and lighting across hair and beard rows
@@ -46,34 +46,34 @@ Approved portrait rule:
 - this approved treatment is now embedded in the hair and beard assets
 
 
-## Definitive V0.4.1.6 asset fix
+## Definitive V0.4.1.7 asset fix
 
-This package is the corrected V0.4.1.6 release.
+This package is the corrected V0.4.1.7 release.
 
 - Approved softened hair and beard assets are embedded in `/assets`.
 - No additional beard-only CSS darkening/filter is applied.
 - Hair and beard rows now use the same visual treatment in the website.
-- Use this package instead of the earlier V0.4.1.6 / V0.4.1.6 LOCKED ZIPs.
+- Use this package instead of the earlier V0.4.1.7 / V0.4.1.7 LOCKED ZIPs.
 
-## V0.4.1.6 cache-busting patch
+## V0.4.1.7 cache-busting patch
 
 The approved softened portrait assets were already present in V0.4.1.3, but GitHub Pages / mobile browsers could continue serving older images because the filenames were unchanged.
 
-V0.4.1.6 fixes this by using new versioned image filenames for:
+V0.4.1.7 fixes this by using new versioned image filenames for:
 - hair assets
 - beard assets
 - all 16 Final Build portraits
 
 This forces the browser to retrieve the corrected images rather than reuse cached copies.
 
-## V0.4.1.6 image-path fix
+## V0.4.1.7 image-path fix
 
 All image files used by the prototype now sit in the repository root alongside `index.html`.
 This removes the possibility of a missing `/assets/` folder during browser-based GitHub uploads.
 
 When uploading this version, select **every file inside this folder** and upload them together.
 
-## V0.4.1.6 — real 16-image Final Build matrix
+## V0.4.1.7 — real 16-image Final Build matrix
 
 This version replaces the ghosted/composited Final Build portraits with 16
 single finished portraits:
@@ -87,3 +87,14 @@ single finished portraits:
 Also:
 - the Welcome screen buttons “Looking to Change” and “Happy Where I Am”
   now explicitly use the same Arial/Helvetica UI font as the rest of the page.
+
+## V0.4.1.7 — Final Build display-quality patch
+
+The 16 Final Build portraits are currently lower-detail source assets than the
+hair/beard reference portraits. This patch stops the centre image being enlarged
+beyond the point where it looks soft/pixelated.
+
+- desktop centre portrait capped at 220px wide
+- mobile centre portrait capped at 220px wide
+- summary grid rebalanced so the centre portrait still reads as the hero image
+- no changes to journey logic or portrait selection
