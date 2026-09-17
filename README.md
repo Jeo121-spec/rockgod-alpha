@@ -1,8 +1,8 @@
-# RockGod® Build Engine Alpha V0.4
+# RockGod® Build Engine Alpha V0.4.1.2
 
 Static mobile-first customer prototype. It does not process payments, send emails, or store personal data.
 
-## V0.4 focus
+## V0.4.1.2 focus
 This release is the visual-integration pass requested after the V0.3 phone review. It deliberately does **not** redesign the product-recommendation decision framework yet.
 
 ### What changed
@@ -28,4 +28,9 @@ This release is the visual-integration pass requested after the V0.3 phone revie
 - Supplier-dependent claims such as UK-made, vegan, cruelty-free or organic are intentionally not asserted until confirmed.
 
 ## Publish
-Upload `index.html` and the entire `assets/` directory to the root of the existing GitHub Pages repository and commit with a message such as `Update to RockGod Alpha V0.4`. GitHub Pages should redeploy automatically.
+Upload `index.html` and the entire `assets/` directory to the root of the existing GitHub Pages repository and commit with a message such as `Update to RockGod Alpha V0.4.1.2`. GitHub Pages should redeploy automatically.
+
+
+## V0.4.1.2 micro-patch
+- Beard reference portraits now use a muted grayscale / lower-contrast treatment to better match the Hair portrait set across Current Beard, Target Beard and downstream reference cards.
+- No flow, recommendation, copy or commercial logic changes in this patch.
