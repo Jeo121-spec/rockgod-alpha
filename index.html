@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#0e0d0c">
-<title>RockGod® | Build Engine Alpha V0.6.1</title>
+<title>RockGod® | Build Engine Alpha V0.7</title>
 <style>
 :root{font-family:Arial,Helvetica,sans-serif;color:#f5f1ea;background:#0e0d0c;font-synthesis:none;--gold:#e3bb78;--gold2:#b98a45;--ink:#0e0d0c;--panel:#191715;--line:#5f5548;--muted:#b9b0a4}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at top,#2b251e 0,#13110f 44%,#0e0d0c 78%);min-height:100vh}button{font:inherit;cursor:pointer}button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}.wrap{max-width:1080px;margin:auto;padding:14px 14px 88px}.header{display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid #443b31;padding:6px 0 11px;position:relative}.header:after{content:'✦';position:absolute;left:50%;bottom:-9px;transform:translateX(-50%);background:#14110f;color:#9a7748;padding:0 8px;font-size:12px}.brand{font-weight:1000;font-style:italic;font-size:clamp(26px,5.5vw,46px);letter-spacing:-3px;color:#dcb87c;transform:skew(-9deg);line-height:.92}.brand small{font-style:normal;letter-spacing:1.8px;font-size:9px;display:block;color:#ddd;font-weight:500;transform:skew(9deg);margin-top:6px}.alpha{font-size:10px;letter-spacing:1.5px;border:1px solid #725d3e;color:#dcb87c;padding:7px 8px;white-space:nowrap}.eyebrow{text-align:center;color:#d8b47b;letter-spacing:4px;font-size:11px;margin-top:20px}.eyebrow:before,.eyebrow:after{content:'◆';font-size:7px;margin:0 7px;color:#7c6241}h1{text-align:center;font-family:Georgia,'Times New Roman',serif;font-size:clamp(31px,6.7vw,64px);letter-spacing:-.7px;margin:8px 0 7px;line-height:1.02;text-transform:uppercase}h1 em{font-style:normal;color:#dfb879}.intro{text-align:center;color:#ddd;line-height:1.42;margin:0 auto 16px;max-width:660px}.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:16px}.choice{background:#181716;color:#eee;border:1px solid #5a5550;border-radius:6px;overflow:hidden;padding:0 0 14px;min-width:0;transition:border-color .15s,transform .15s,box-shadow .15s}.choice:hover{border-color:#b99a68}.choice.selected{border:2px solid #edc78b;box-shadow:0 0 18px #d4a05b33;transform:translateY(-1px)}.choice img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center;background:#0b0b0b}.choice.hair img{filter:none}.choice.beard img{filter:none}.choice strong{display:block;letter-spacing:1.6px;font-size:clamp(11px,1.8vw,18px);margin:10px 3px 3px}.choice span{font-size:11px;color:#c8c0b5}.choice.selected strong:after{content:' ✓';color:#eac588}.panel{border:1px solid #625747;background:linear-gradient(180deg,#1b1917,#151311);border-radius:8px;padding:17px;margin:16px auto;max-width:820px;box-shadow:inset 0 0 0 1px #2a251f}.panel h2{color:#e9c187;text-transform:uppercase;font-size:18px;letter-spacing:1px}.panel p{line-height:1.5;color:#d4cdc3}.panel.quest{position:relative}.panel.quest:before,.panel.quest:after{content:'';position:absolute;width:22px;height:22px;border-color:#8c6c43}.panel.quest:before{top:7px;left:7px;border-top:1px solid;border-left:1px solid}.panel.quest:after{right:7px;bottom:7px;border-right:1px solid;border-bottom:1px solid}.tag{display:inline-block;border:1px solid #90754d;color:#eac48a;padding:6px 9px;font-size:11px;letter-spacing:1px}.route{display:flex;flex-direction:column;align-items:stretch;gap:10px;max-width:460px;margin:0 auto}.route .btn{width:100%;text-align:left;display:flex;justify-content:space-between;align-items:center;font-family:Arial,Helvetica,sans-serif;font-weight:700;letter-spacing:.65px;text-transform:none}
@@ -14,7 +14,7 @@
 .corner-promise strong{display:block;color:#efc98d;font-family:Georgia,'Times New Roman',serif;font-size:clamp(21px,4vw,32px);line-height:1.1;margin-bottom:8px}.route .btn.alt{background:#181716;color:#f4e8d7;border-color:#8b6c45}.route .btn.alt:hover{border-color:#d9ad6b;background:#211d18}.btn{padding:15px 18px;border:1px solid #645b50;background:transparent;color:#fff;letter-spacing:1.6px;font-weight:800;text-transform:uppercase;border-radius:4px}.btn.gold{background:linear-gradient(130deg,#f0ce92,#c39752);color:#16110a;border-color:#e7c187}.btn:disabled{opacity:.3;cursor:not-allowed}.small{font-size:12px;color:#b6a994}.summary{display:grid;grid-template-columns:1fr .95fr 1fr;gap:12px;align-items:center}.summary img{width:100%;border-radius:5px}.summary .side{border:1px solid #544b40;padding:9px;text-align:center;background:#171411}.summary .main{border:1px solid #6d5b45;box-shadow:0 0 24px #b1834533;filter:none;aspect-ratio:3/4;object-fit:cover;background:#0b0b0b;max-width:220px;justify-self:center}.side img{aspect-ratio:3/4;object-fit:cover;object-position:center;background:#0b0b0b;filter:none}.side img[src*="beard-"]{filter:none}.side img.beard-ref{object-position:center;filter:none}.side strong{display:block;padding:8px;font-size:12px}.side button{background:none;color:#eac48a;border:1px solid #77654a;padding:8px;width:100%}.warning{font-size:12px;color:#b7aa96;text-align:center;max-width:650px;margin:12px auto}.nemesis,.barriers{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;max-width:820px;margin:0 auto}.nemesis button,.barriers button{min-height:78px;background:#24211e;color:#eee;border:1px solid #62584d;border-radius:5px;padding:10px}.nemesis button.selected,.barriers button.selected{border:2px solid #eac48a;background:#443525}.review{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.review div{background:#24201c;padding:12px;border:1px solid #5a5045}.review strong{color:#e9c187}.loadout-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}.product{border:1px solid #6a5a46;background:#211d19;padding:14px;border-radius:6px;position:relative}.product .slot{font-size:10px;letter-spacing:2px;color:#9e8869}.product h3{margin:7px 0 4px;color:#efc98d;text-transform:uppercase}.product p{font-size:13px;margin:5px 0;color:#d6cec2}.product .why{margin-top:10px;padding-top:9px;border-top:1px solid #4c4338}.offer{max-width:760px;margin:20px auto;text-align:center;border:1px solid #8e6a3c;background:radial-gradient(circle at top,#3a2b1c,#171411 55%);padding:24px 18px;border-radius:9px;box-shadow:0 0 28px #9c6b2b25}.price{font-family:Georgia,'Times New Roman',serif;font-size:54px;color:#f0c988;line-height:1;margin:10px 0}.offer ul{display:inline-block;text-align:left;color:#d9d1c6;line-height:1.7;padding-left:20px}.offer-build{max-width:210px;margin:14px auto 8px}.offer-build img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;border:1px solid #7c6545;border-radius:6px;background:#0b0b0b}.offer-build span{display:block;color:#d9b67d;font-size:9px;letter-spacing:1.2px;margin-top:7px;text-transform:uppercase}.offer .btn{min-width:240px}.target-section{border-top:1px solid #4d4338;padding-top:15px;margin-top:10px}.target-section:first-child{border-top:0;padding-top:0;margin-top:0}.target-heading{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:2px}.target-heading h2{margin:0;color:#f0c988;font-size:20px}.target-heading p{margin:0;color:#cfc5b8;font-size:13px}.offer-price{display:flex;justify-content:center;align-items:baseline;gap:12px;margin:10px 0}.was-price{font-family:Georgia,'Times New Roman',serif;font-size:25px;color:#9f9588;text-decoration:line-through;text-decoration-thickness:2px}.now-price{font-family:Georgia,'Times New Roman',serif;font-size:56px;color:#f0c988;line-height:1}.saving{display:inline-block;border:1px solid #7d6545;color:#e8c181;padding:5px 8px;font-size:10px;letter-spacing:1px;margin-bottom:8px}.trust-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin:16px 0}.trust-item{border:1px solid #554a3d;background:#201c18;padding:10px 6px;font-size:10px;letter-spacing:.7px;color:#ddd;text-transform:uppercase}.wallets{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-width:560px;margin:12px auto}.wallet{min-height:44px;border:1px solid #6b5d4c;background:#f2efe9;color:#15120f;border-radius:4px;font-weight:800}.wallet.dark{background:#050505;color:#fff;border-color:#333}.quest-continue{max-width:760px;margin:14px auto 0;text-align:center;border:1px solid #574b3e;padding:18px;border-radius:8px;background:#171513}.quest-continue h2{margin:0 0 6px;color:#e9c187}.email-row{display:flex;gap:8px;max-width:540px;margin:12px auto 0}.email-row input{flex:1;min-width:0;background:#0f0e0d;color:#fff;border:1px solid #64584a;border-radius:4px;padding:13px;font-size:16px}.email-row .btn{white-space:nowrap}.prototype-note{font-size:11px;color:#aa9d8c;line-height:1.4;margin-top:10px}.bottomnav{position:fixed;left:0;right:0;bottom:0;z-index:20;background:#100f0ef2;border-top:1px solid #4d4337;backdrop-filter:blur(10px)}.bottom-inner{max-width:1080px;margin:auto;padding:8px 12px calc(8px + env(safe-area-inset-bottom));display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center}.progress-wrap{text-align:center;min-width:115px}.step{color:#cdb790;letter-spacing:2px;font-size:9px;margin-bottom:5px}.progress{display:flex;gap:4px}.progress i{flex:1;height:4px;border-radius:9px;background:#3e3a35}.progress i.on{background:#e2ba7a;box-shadow:0 0 7px #aa8245}.bottom-inner .btn{padding:11px 12px;font-size:11px}.bottom-inner .btn:first-child{justify-self:start}.bottom-inner .btn:last-child{justify-self:end}.foot{text-align:center;color:#787169;letter-spacing:2px;font-size:9px;border-top:1px solid #302b25;padding:18px 8px;margin-top:26px}.hidden{display:none}.cta-note{text-align:center;color:#cdbfae;font-size:12px}.completion-mark{font-size:42px;color:#e8bd79;text-align:center;margin-top:8px}
 @media(max-width:640px){.wrap{padding:10px 10px 90px}.header{padding-bottom:9px}.brand{font-size:28px}.brand small{font-size:8px}.alpha{font-size:8px;padding:6px}.eyebrow{margin-top:14px;letter-spacing:2.5px;font-size:9px}h1{font-size:30px;margin:6px 0}.intro{font-size:13px;line-height:1.35;margin-bottom:10px}.cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:10px}.choice{padding-bottom:10px}.choice img{aspect-ratio:3/4;object-position:center}.choice.beard img{aspect-ratio:3/4;object-position:center}.choice strong{font-size:11px;margin-top:7px;letter-spacing:.8px}.choice span{font-size:9px}.panel{padding:13px;margin:12px auto}.panel h2{font-size:15px}.summary{grid-template-columns:1fr 1fr}.summary .main{grid-column:1/-1;grid-row:1;max-width:220px;margin:auto}.nemesis,.barriers{grid-template-columns:repeat(2,1fr);gap:7px}.nemesis button,.barriers button{min-height:66px;font-size:12px}.review{grid-template-columns:1fr 1fr}.loadout-grid{grid-template-columns:1fr}.offer{padding:18px 13px}.price{font-size:46px}.trust-strip{grid-template-columns:repeat(2,1fr)}.wallets{grid-template-columns:1fr}.email-row{flex-direction:column}.email-row .btn{width:100%}.bottom-inner{grid-template-columns:1fr 110px 1fr}.bottom-inner .btn{font-size:9px;letter-spacing:.8px;padding:10px 8px}}
 
-/* V0.6.1: product education, recommendation output and honest prototype offer */
+/* V0.7: product education, recommendation output and honest prototype offer */
 .choice,.btn,.nemesis button,.barriers button{font-family:Arial,Helvetica,sans-serif}
 .choice:focus-visible,.nemesis button:focus-visible,.barriers button:focus-visible,.wallet:focus-visible{outline:3px solid #f1ca88;outline-offset:2px}
 .nemesis button[aria-pressed="true"],.barriers button[aria-pressed="true"]{border:2px solid #eac48a;background:#443525}
@@ -65,13 +65,44 @@
 
 .equip-steps{padding-left:22px;margin:8px 0 14px}
 .equip-steps li{margin:0 0 10px;line-height:1.5}
+
+/* V0.7 commercial refinement */
+.result-summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:14px 0}
+.result-summary div{border:1px solid #5c4e3e;background:#211c17;padding:12px;border-radius:5px}
+.result-summary strong{display:block;color:#e9c187;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:5px}
+.result-summary p{margin:0;line-height:1.45}
+.beard-route{border-left:3px solid #8e724d;background:#211b15;padding:12px 14px;margin:14px 0;line-height:1.55;color:#ded3c4}
+.loadout-visual{max-width:590px;margin:18px auto 14px;border:1px solid #8e6a3c;border-radius:10px;background:linear-gradient(160deg,#2d231b,#171411);padding:18px;box-shadow:0 0 28px #9c6b2b20}
+.loadout-visual .mailer{border:1px solid #745b3c;background:#0f0e0d;padding:14px;border-radius:7px}
+.loadout-visual .pack-title{font-family:Georgia,'Times New Roman',serif;color:#efc98d;font-size:25px;line-height:1;margin-bottom:4px}
+.loadout-visual .pack-sub{font-size:10px;letter-spacing:1.5px;color:#bda889;text-transform:uppercase;margin-bottom:15px}
+.pack-grid{display:grid;grid-template-columns:1fr 1fr 1.25fr;gap:12px;align-items:end}
+.mini-bottle{min-height:150px;border:1px solid #765d3f;background:linear-gradient(180deg,#28231f,#141210);border-radius:13px 13px 6px 6px;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;padding:10px 7px;position:relative}
+.mini-bottle:before{content:"";position:absolute;top:-10px;width:38%;height:18px;border:1px solid #765d3f;background:#0c0b0a;border-radius:4px 4px 1px 1px}
+.mini-bottle b{color:#f0c98a;font-size:14px;letter-spacing:1px}
+.mini-bottle span{font-size:9px;color:#c8bcad;text-align:center;line-height:1.3;margin-top:4px}
+.equip-card{min-height:170px;border:1px solid #806643;background:linear-gradient(160deg,#342719,#1b1612);padding:12px;text-align:left;border-radius:5px}
+.equip-card .ey{font-size:9px;letter-spacing:1.2px;color:#c8ad84;text-transform:uppercase}
+.equip-card h4{font-family:Georgia,'Times New Roman',serif;color:#efc98d;font-size:18px;margin:5px 0 10px}
+.equip-card p{font-size:11px;line-height:1.45;margin:5px 0;color:#ddd3c7}
+.offer-includes{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0}
+.offer-includes div{border:1px solid #5e4e3c;background:#211c17;padding:10px 8px;font-size:11px;color:#e0d7ca}
+.offer-includes strong{display:block;color:#e9c187;margin-bottom:3px}
+.optional-note{font-size:12px;color:#bcae9c;margin-top:8px}
+@media(max-width:640px){
+ .result-summary{grid-template-columns:1fr}
+ .pack-grid{grid-template-columns:1fr 1fr}
+ .equip-card{grid-column:1/-1}
+ .offer-includes{grid-template-columns:1fr}
+}
+
 </style>
 </head>
 <body>
 <main class="wrap">
-<header class="header"><div class="brand">RockGod®<small>BUILD THE LOOK · EQUIP THE ROUTINE</small></div><div class="alpha">ALPHA V0.6.1.1 · DEMO</div></header>
+<header class="header"><div class="brand">RockGod®<small>BUILD THE LOOK · EQUIP THE ROUTINE</small></div><div class="alpha">ALPHA V0.7.1 · DEMO</div></header>
 <section id="content" aria-live="polite"></section>
-<footer class="foot">ROCKGOD® ALPHA V0.6.1.1 · TEST ONLY · NO PAYMENTS OR PERSONAL DATA COLLECTED</footer>
+<footer class="foot">ROCKGOD® ALPHA V0.7.1 · TEST ONLY · NO PAYMENTS OR PERSONAL DATA COLLECTED</footer>
 </main>
 <div class="bottomnav" id="bottomnav"><div class="bottom-inner"><button class="btn" id="back">← BACK</button><div class="progress-wrap"><div id="step" class="step"></div><div id="progress" class="progress"></div></div><button class="btn gold" id="next">CONTINUE →</button></div></div>
 <script>
@@ -79,7 +110,7 @@
 const hair=['BALD / SHAVED','SHORT','MEDIUM','LONG'];
 const beard=['CLEAN SHAVEN','STUBBLE','SHORT','LONG'];
 const priorities={
- maintain:{label:'Nothing — just maintain my look',button:'NOTHING — JUST MAINTAIN MY LOOK'},
+ maintain:{label:'No Nemesis — just maintain my look',button:'NO NEMESIS — JUST MAINTAIN MY LOOK'},
  flat:{label:'Hair looks flat',button:'HAIR LOOKS FLAT'},
  dry:{label:'Hair feels dry or rough',button:'HAIR FEELS DRY OR ROUGH'},
  fluffy:{label:'Hair looks messy or fluffy',button:'HAIR LOOKS MESSY OR FLUFFY'},
@@ -109,17 +140,21 @@ const $=s=>document.querySelector(s);
 const asset=(type,i)=>`${type}-v0415-${i}.webp`;
 const finalAsset=(h,b)=>`final-v0416-${h}-${b}.webp`;
 const preloadCache=[];
-function preloadPortraits(){
- const urls=[];
- for(let i=0;i<4;i++){urls.push(asset('hair',i),asset('beard',i));}
- for(let h=0;h<4;h++)for(let b=0;b<4;b++)urls.push(finalAsset(h,b));
- urls.forEach(src=>{const im=new Image();im.decoding='async';im.src=src;preloadCache.push(im);});
+const preloadSeen=new Set();
+function preloadUrls(urls){
+ urls.forEach(src=>{
+   if(preloadSeen.has(src))return;
+   preloadSeen.add(src);
+   const im=new Image();im.decoding='async';im.src=src;preloadCache.push(im);
+ });
 }
+function preloadHair(){preloadUrls([0,1,2,3].map(i=>asset('hair',i)))}
+function preloadBeard(){preloadUrls([0,1,2,3].map(i=>asset('beard',i)))}
 function prefetchSelectedFinal(){
  if(state.targetHair===null||state.targetBeard===null)return;
- const im=new Image();im.decoding='async';im.src=finalAsset(state.targetHair,state.targetBeard);preloadCache.push(im);
+ preloadUrls([finalAsset(state.targetHair,state.targetBeard)]);
 }
-preloadPortraits();
+preloadHair();
 function header(label,title,desc){return `<div class="eyebrow">${label}</div><h1>${title}</h1><p class="intro">${desc}</p>`}
 function cards(type,key){const opts=type==='hair'?hair:beard;return `<div class="cards">${opts.map((v,i)=>`<button type="button" class="choice ${type} ${state[key]===i?'selected':''}" data-key="${key}" data-val="${i}" aria-pressed="${state[key]===i}"><img src="${asset(type,i)}" alt="${v.toLowerCase()} ${type} reference"><strong>${v}</strong><span>${state[key]===i?'SELECTED':'TAP TO SELECT'}</span></button>`).join('')}</div>`}
 function allowedPriorities(){
@@ -128,7 +163,7 @@ function allowedPriorities(){
  if(state.currentBeard>0)a.push('beardRough');
  return a;
 }
-function selectedName(){return priorities[state.priority]?.label||'Your chosen priority'}
+function selectedName(){return priorities[state.priority]?.label||'Your chosen Nemesis'}
 function isGrowing(){return state.currentHair!==null&&state.targetHair>state.currentHair || state.currentBeard!==null&&state.targetBeard>state.currentBeard}
 function companion(){return state.currentHair===3?'conditioner':'shampoo'}
 function recommendation(){
@@ -183,8 +218,8 @@ function recommendation(){
    if(!ids.length)ids=['shampoo','conditioner'];
 
    const bridge = changing
-     ? `${routeLine} This First Loadout is a bridge: products you can use now, chosen with your next stage in mind.`
-     : `${routeLine} This First Loadout gives you a simple way to explore the routine around that Build.`;
+     ? `Your First Loadout is designed to be useful now without locking you into the stage you’re leaving.`
+     : `Your First Loadout gives you a simple way to explore the routine around the Build you already like.`;
 
    if(p==='maintain'){
      headline=changing?'Build the routine for your next stage.':'Keep your Build in shape.';
@@ -261,7 +296,7 @@ const guides=[
  'We’ll focus on a routine you can realistically repeat without spending ages on it.',
  'The First Loadout is designed as a small trial before you commit to full-size gear.'
 ];
-function guidance(){return state.barriers.length?state.barriers.map(i=>guides[i]).join(' '):'Try your samples and see how they feel.'}
+function guidance(){return state.barriers.length?state.barriers.map(i=>guides[i]).join(' '):'You haven’t selected a specific barrier, so we’ll keep the routine simple and let the products earn their place.'}
 function journeyCopy(){
  const now=`${hair[state.currentHair].toLowerCase()} hair and ${beard[state.currentBeard].toLowerCase()} beard`;
  const future=`${hair[state.targetHair].toLowerCase()} hair and ${beard[state.targetBeard].toLowerCase()} beard`;
@@ -289,30 +324,97 @@ function equipGuide(items){
  return `<ol class="equip-steps">${steps.map(s=>`<li>${s}</li>`).join('')}</ol><p><strong>Your barrier tip:</strong> ${tailored}</p><p><strong>${quest}</strong></p>`;
 }
 
+
+function beardRouteNote(){
+ if(state.mode!=='change'||state.targetBeard===state.currentBeard)return '';
+ const now=beard[state.currentBeard].toLowerCase();
+ const target=beard[state.targetBeard].toLowerCase();
+ if(state.targetBeard>state.currentBeard){
+   if(state.currentBeard===0){
+     return `<div class="beard-route"><strong>Beard route:</strong> You’re starting clean-shaven and building towards a ${target} beard. We haven’t added beard product just to fill the kit — there isn’t beard hair to treat yet. When you reach stubble, beard care becomes part of the next stage.</div>`;
+   }
+   return `<div class="beard-route"><strong>Beard route:</strong> You’re moving from ${now} towards ${target}. Keep the beard simple for now; as the length changes, your next Quest can reassess whether dedicated beard care belongs in the Loadout.</div>`;
+ }
+ return `<div class="beard-route"><strong>Beard route:</strong> You’re moving from ${now} towards ${target}. That change is more about trimming and shape than adding extra product, so we haven’t padded your First Loadout with unnecessary beard gear.</div>`;
+}
+
+function loadoutVisual(rec){
+ const minis=rec.products.slice(0,2);
+ const miniHtml=minis.map((p,i)=>`<div class="mini-bottle"><b>${p.name}</b><span>${p.type}<br>MINI 0${i+1}</span></div>`).join('');
+ const current=`${hair[state.currentHair]} / ${beard[state.currentBeard]}`;
+ const target=`${hair[state.targetHair]} / ${beard[state.targetBeard]}`;
+ return `<div class="loadout-visual"><div class="mailer"><div class="pack-title">ROCKGOD® FIRST LOADOUT</div><div class="pack-sub">EQUIP · TEST · LEVEL UP</div><div class="pack-grid">${miniHtml}<div class="equip-card"><div class="ey">YOUR EQUIP CARD</div><h4>${state.mode==='change'?`${hair[state.currentHair]} → ${hair[state.targetHair]}`:hair[state.currentHair]}</h4><p><strong>Build:</strong> ${state.mode==='change'?`${current} → ${target}`:current}</p><p><strong>Nemesis:</strong> ${selectedName()}</p><p><strong>Inside:</strong> your two minis, plain-English routine and next-Quest route.</p></div></div></div></div>`;
+}
+
 function productCards(rec){return `<div class="education">${rec.products.map((p,i)=>`<article class="gear"><span class="slot">FIRST LOADOUT · MINI 0${i+1}</span><h3>${p.name}</h3><p class="kind">${p.type} · Working name</p><h4>What is it?</h4><p>${p.what}</p><h4>What does it do?</h4><p>${p.does}</p><h4>Why is it here?</h4><p>${p.why}</p><h4>How do I use it?</h4><p>${p.how}</p></article>`).join('')}</div>`}
 function finalVisual(){const h=state.targetHair,b=state.targetBeard;return `<div class="summary" style="margin-bottom:14px"><div class="side"><img src="${asset('hair',h)}" alt="Target hair reference: ${hair[h]}"><strong>HAIR: ${hair[h]}</strong></div><img class="main" src="${finalAsset(h,b)}" alt="Illustrative combined portrait: ${hair[h]} hair and ${beard[b]} beard" loading="eager" decoding="async" fetchpriority="high"><div class="side"><img class="beard-ref" src="${asset('beard',b)}" alt="Target beard reference: ${beard[b]}"><strong>BEARD: ${beard[b]}</strong></div></div>`}
-function setStage(n){state.stage=n;render(false)}
+function setStage(n){state.stage=n;if(n>=1)preloadBeard();if(n>=4)prefetchSelectedFinal();render(false)}
 function selectAndStay(key,val){state[key]=val; if(['currentHair','currentBeard'].includes(key)&&state.priority&&!allowedPriorities().includes(state.priority))state.priority=null;if(key==='targetHair'||key==='targetBeard')prefetchSelectedFinal();render(true)}
 function toggleBarrier(val){const i=state.barriers.indexOf(val);if(i>=0)state.barriers.splice(i,1);else if(state.barriers.length<2)state.barriers.push(val);render(true)}
-function updateNav(){const nav=$('#bottomnav'),back=$('#back'),next=$('#next');if(state.stage===0){nav.classList.add('hidden');return}nav.classList.remove('hidden');const total=7;$('#step').textContent=state.stage<=7?`STEP ${state.stage} OF ${total}`:'BUILD COMPLETE';$('#progress').innerHTML=Array.from({length:total},(_,i)=>`<i class="${i<Math.min(state.stage,total)?'on':''}"></i>`).join('');back.textContent='← BACK';back.style.visibility='visible';next.style.visibility='visible';next.className='btn gold';next.disabled=(state.stage===1&&state.currentHair===null)||(state.stage===2&&state.currentBeard===null)||(state.stage===3&&(state.targetHair===null||state.targetBeard===null))||(state.stage===5&&!state.priority)||(state.stage===6&&!state.barriers.length);next.textContent=({3:'SEE MY BUILD →',4:'CHOOSE MY PRIORITY →',5:'CONTINUE →',6:'VIEW MY LOADOUT →',7:'FIRST LOADOUT →',8:'TRY MY LOADOUT · £9.95'})[state.stage]||'CONTINUE →';if(state.stage===8)back.textContent='← LOADOUT'}
+function updateNav(){const nav=$('#bottomnav'),back=$('#back'),next=$('#next');if(state.stage===0){nav.classList.add('hidden');return}nav.classList.remove('hidden');const total=7;$('#step').textContent=state.stage<=7?`STEP ${state.stage} OF ${total}`:'BUILD COMPLETE';$('#progress').innerHTML=Array.from({length:total},(_,i)=>`<i class="${i<Math.min(state.stage,total)?'on':''}"></i>`).join('');back.textContent='← BACK';back.style.visibility='visible';next.style.visibility='visible';next.className='btn gold';next.disabled=(state.stage===1&&state.currentHair===null)||(state.stage===2&&state.currentBeard===null)||(state.stage===3&&(state.targetHair===null||state.targetBeard===null))||(state.stage===5&&!state.priority);next.textContent=({3:'SEE MY BUILD →',4:'FACE MY NEMESIS →',5:'CONTINUE →',6:'VIEW MY LOADOUT →',7:'SEE THE OFFER →',8:'TRY MY LOADOUT · £9.95'})[state.stage]||'CONTINUE →';if(state.stage===8)back.textContent='← LOADOUT'}
 function render(preserve=false){const y=window.scrollY,s=state.stage;let html='';
- if(s===0){html=header('CHARACTER BUILDER · HAIR + BEARD','YOU’RE THE <em>MAIN CHARACTER.</em>','Build the look that fits the part. Choose your hair and beard, see the Build you’re working towards and discover your first Loadout.');html+=`<div class="hero-line">HAIR · BEARD · YOUR BUILD · YOUR QUEST</div><div class="panel quest" style="text-align:center"><span class="tag">YOUR BUILD STARTS HERE</span><h2>Choose your route</h2><p>Are you happy with your current look, or working towards something new?</p><div class="route"><button type="button" class="btn gold" data-mode="change"><span>Looking to Change</span><span>→</span></button><button type="button" class="btn alt" data-mode="keep"><span>Happy Where I Am</span><span>→</span></button></div><p class="small">No photo required. No grooming knowledge required. This Alpha collects no personal data.</p></div>`}
- if(s===1){html=header('CURRENT BUILD · HAIR','WHERE ARE YOU <em>NOW?</em>','Choose the hair that looks most like yours right now. Pick the closest.');html+=cards('hair','currentHair')}
- if(s===2){html=header('CURRENT BUILD · BEARD','WHAT’S YOUR <em>BEARD?</em>','Choose the beard that looks most like yours right now.');html+=cards('beard','currentBeard')}
- if(s===3){html=header('TARGET BUILD','WHAT ARE YOU <em>BUILDING TOWARDS?</em>','Choose the hair and beard you want your next Build to move towards. Keeping either as it is is completely valid.');html+=`<div class="panel quest"><div class="target-section"><div class="target-heading"><h2>TARGET HAIR</h2><p>What would you like your hair to look like?</p></div>${cards('hair','targetHair')}</div><div class="target-section"><div class="target-heading"><h2>TARGET BEARD</h2><p>What would you like your beard to look like?</p></div>${cards('beard','targetBeard')}</div></div>`}
- if(s===4){html=header('FINAL BUILD','THIS IS <em>YOUR BUILD.</em>','This is the look you’re working towards.');html+=finalVisual();html+=`<p class="help-note">This is your destination Build. Your First Loadout will bridge what you can use today with the direction you’re heading next.</p>`}
- if(s===5){html=header('YOUR NEMESIS','WHAT’S YOUR <em>NEMESIS?</em>','Every Build has something getting in the way. Choose the ONE problem you’d most like to tackle right now.');html+=`<div class="nemesis">${allowedPriorities().map(id=>`<button type="button" data-priority="${id}" aria-pressed="${state.priority===id}" class="${state.priority===id?'selected':''}">${priorities[id].button}${state.priority===id?' ✓':''}</button>`).join('')}</div><p class="help-note">Choose one Nemesis for now. Your next Quest can go deeper once you’ve tried your First Loadout.</p>`}
- if(s===6){html=header('YOUR QUEST','WHAT’S BEEN <em>HOLDING YOU BACK?</em>','Select up to TWO things that have made your Nemesis harder to beat.');html+=`<div class="barriers">${barrierLabels.map((p,i)=>`<button type="button" data-barrier="${i}" aria-pressed="${state.barriers.includes(i)}" class="${state.barriers.includes(i)?'selected':''}">${p}${state.barriers.includes(i)?' ✓':''}</button>`).join('')}</div><p class="help-note">These answers shape your Equip guidance — not the number of products in your Loadout.</p>`}
- if(s===7){const rec=recommendation();html=header('YOUR FIRST LOADOUT','BUILT FOR <em>YOUR NEXT STAGE.</em>','A Bridge Loadout: gear you can use now, chosen with the Build you’re working towards in mind.');html+=`<div class="panel quest">${finalVisual()}<div class="review"><div><strong>Current → Target</strong><p>${hair[state.currentHair]} → ${hair[state.targetHair]}<br>${beard[state.currentBeard]} → ${beard[state.targetBeard]}</p></div><div><strong>Your Nemesis</strong><p>${selectedName()}</p></div><div><strong>What’s holding you back</strong><p>${state.barriers.map(i=>barrierLabels[i]).join(' · ')}</p></div><div><strong>Why this Loadout</strong><p>Useful now, chosen with your next stage in mind.</p></div></div><div class="journey">${journeyCopy()}</div><h2 class="copy-head">${rec.headline}</h2><p class="copy-intro">${rec.intro}</p>${productCards(rec)}<div class="guide"><h3>YOUR EQUIP GUIDE</h3><p>${guidance()}</p><p><strong>Your First Quest:</strong> Try the samples. See how your hair or beard looks and feels. Tell us what you think.</p></div><p class="prototype-note">${rec.status} Product names, directions and descriptions are draft illustrations; test actual formulations before sale.</p></div>`}
- if(s===8){const rec=recommendation();html=`<div class="completion-mark">✦</div>`+header('BUILD COMPLETE','YOUR FIRST BUILD IS <em>READY.</em>','Your First Loadout is an introduction to RockGod. Try the gear, learn what suits you and continue when you’re ready.');html+=`<div class="offer"><span class="tag">FIRST LOADOUT · CONCEPT OFFER</span><div class="offer-build"><img src="${finalAsset(state.targetHair,state.targetBeard)}" alt="Your target Build portrait"><span>${hair[state.targetHair]} HAIR · ${beard[state.targetBeard]} BEARD</span></div><h2>TRY YOUR FIRST LOADOUT</h2><div class="price">£9.95</div><p>${rec.products.length===1?'One focused scalp-care sample in this provisional shaved-head route.':'Two introductory mini products chosen to bridge where you are now and what you’re building towards.'}</p><div class="inline-offer-items">${rec.products.map(p=>`<span>${p.name} · ${p.type}</span>`).join('')}</div><div class="trust-strip"><div class="trust-item">Current → Target</div><div class="trust-item">Plain-English guide</div><div class="trust-item">No filler products</div><div class="trust-item">Try before full size</div></div><div class="journey" style="text-align:left">${journeyCopy()}</div><p class="prototype-note">£9.95 is an unconfirmed test price. No genuine previous price or limited-stock claim is made. Final samples, costs, postage and claims require validation. No live checkout.</p><button type="button" class="btn gold" id="buydemo">TRY MY FIRST LOADOUT · £9.95 →</button><div class="wallets"><button type="button" class="wallet dark" data-wallet="Apple Pay"> Pay · DEMO</button><button type="button" class="wallet" data-wallet="Google Pay">G Pay · DEMO</button><button type="button" class="wallet" data-wallet="Card">CARD · DEMO</button></div><p id="buymsg" class="status hidden" role="status">This is a purchase-intent demo, not a checkout. No payment was taken. Tell the tester whether you would buy it and why.</p><div class="addon"><h3>Complete your routine? · Optional</h3><label><input type="checkbox" id="bodywash"><span><strong>Body wash</strong> — a separate, future add-on for your shower routine. Not part of the £9.95 sample kit. Formula and price to be confirmed.</span></label><p id="addonmsg" class="small">No extra product is selected.</p></div></div><div class="corner-promise"><strong>NOT JUST IN YOUR BATHROOM CABINET.<br>WE’RE IN YOUR CORNER.</strong><p>Your Build will change. RockGod is being built to guide you with plain-English advice, evolving Loadouts and practical support as your Quest develops.</p></div><div class="quest-continue"><span class="tag">NOT READY TO BUY?</span><h2>CONTINUE YOUR QUEST</h2><p>You’re the main character. The next Quest will let you go deeper into your look, your routine and what you want to build next.</p><button type="button" class="btn" id="questdemo">Preview the Next Quest →</button><p id="questmsg" class="status hidden" role="status">Future feature preview: try your samples, tell us what worked, and optionally unlock a deeper character experience. No profile, email or personal information is collected here.</p><p class="prototype-note">In the eventual store, saving a Build and optional marketing permission will be separate choices. We are not promising an AI guide or proactive messages in this demo.</p></div><div class="test-panel"><h2>Testing this with a friend?</h2><p>Without explaining RockGod first, ask: Did the Build make sense? Did the samples feel relevant to both where you are now and where you’re heading? Could you understand what each product does? Would you tap the £9.95 button — and what stopped you?</p></div>`}
+ if(s===0){
+   html=header(
+     'CHARACTER BUILDER · HAIR + BEARD',
+     'YOU’RE THE <em>MAIN CHARACTER.</em>',
+     'Know the look you want but not the products you need? Show us where you are and where you’re heading. We’ll recommend the first gear to try — and show you exactly how to use it.'
+   );
+   html+=`<div class="hero-line">HAIR · BEARD · YOUR BUILD · YOUR QUEST</div><div class="panel quest" style="text-align:center"><span class="tag">YOUR BUILD STARTS HERE</span><h2>Choose your route</h2><p>Are you happy with your current look, or working towards something new?</p><div class="route"><button type="button" class="btn gold" data-mode="change"><span>Looking to Change</span><span>→</span></button><button type="button" class="btn alt" data-mode="keep"><span>Happy Where I Am</span><span>→</span></button></div><p class="small">No photo required. No grooming knowledge required. This Alpha collects no personal data.</p></div>`;
+ }
+ if(s===1){
+   html=header('CURRENT BUILD · HAIR','WHERE ARE YOU <em>NOW?</em>','Choose your current hair length. The closest match is fine.');
+   html+=cards('hair','currentHair');
+ }
+ if(s===2){
+   html=header('CURRENT BUILD · BEARD','WHAT’S YOUR <em>BEARD?</em>','Choose your current beard length. The closest match is fine.');
+   html+=cards('beard','currentBeard');
+ }
+ if(s===3){
+   html=header('TARGET BUILD','WHAT ARE YOU <em>BUILDING TOWARDS?</em>','Choose the hair and beard you want your next Build to move towards. Keeping either as it is is completely valid.');
+   html+=`<div class="panel quest"><div class="target-section"><div class="target-heading"><h2>TARGET HAIR</h2><p>What would you like your hair to look like?</p></div>${cards('hair','targetHair')}</div><div class="target-section"><div class="target-heading"><h2>TARGET BEARD</h2><p>What would you like your beard to look like?</p></div>${cards('beard','targetBeard')}</div></div>`;
+ }
+ if(s===4){
+   if(state.mode==='keep'){
+     html=header('YOUR BUILD','THIS IS <em>YOUR BUILD.</em>','You’re happy with where you are. Now let’s make the routine clearer and easier.');
+     html+=finalVisual();
+     html+=`<p class="help-note">We’ll recommend a simple starting routine around the look you already want to keep.</p>`;
+   }else{
+     html=header('TARGET BUILD','THIS IS YOUR <em>TARGET BUILD.</em>','This is the direction you’re building towards.');
+     html+=finalVisual();
+     html+=`<p class="help-note">Your First Loadout should be useful now without locking you into the stage you’re leaving.</p>`;
+   }
+ }
+ if(s===5){
+   html=header('YOUR NEMESIS','WHAT’S YOUR <em>NEMESIS?</em>','Every Build has something getting in the way. Choose the ONE problem you’d most like to tackle right now.');
+   html+=`<div class="nemesis">${allowedPriorities().map(id=>`<button type="button" data-priority="${id}" aria-pressed="${state.priority===id}" class="${state.priority===id?'selected':''}">${priorities[id].button}${state.priority===id?' ✓':''}</button>`).join('')}</div><p class="help-note">Choose one Nemesis for now. Your next Quest can go deeper once you’ve tried your First Loadout.</p>`;
+ }
+ if(s===6){
+   html=header('YOUR QUEST','WHAT’S BEEN <em>HOLDING YOU BACK?</em>','Select up to TWO if any apply. You can also skip this screen.');
+   html+=`<div class="barriers">${barrierLabels.map((p,i)=>`<button type="button" data-barrier="${i}" aria-pressed="${state.barriers.includes(i)}" class="${state.barriers.includes(i)?'selected':''}">${p}${state.barriers.includes(i)?' ✓':''}</button>`).join('')}</div><p class="help-note">${state.barriers.length?'We’ll use these answers to tailor your Equip guidance.':'Nothing selected — that’s completely fine. Continue for your Loadout.'}</p>`;
+ }
+ if(s===7){
+   const rec=recommendation();
+   html=header('YOUR FIRST LOADOUT','HERE’S YOUR <em>STARTING GEAR.</em>','Useful now. Chosen with your Build and Nemesis in mind.');
+   const route = state.mode==='change'
+     ? `${hair[state.currentHair]} → ${hair[state.targetHair]}<br>${beard[state.currentBeard]} → ${beard[state.targetBeard]}`
+     : `${hair[state.currentHair]} hair<br>${beard[state.currentBeard]} beard`;
+   html+=`<div class="panel quest"><div class="result-summary"><div><strong>${state.mode==='change'?'Current → Target':'Your Build'}</strong><p>${route}</p></div><div><strong>Your Nemesis</strong><p>${selectedName()}</p></div></div><h2 class="copy-head">${rec.headline}</h2><p class="copy-intro">${rec.intro}</p>${beardRouteNote()}${productCards(rec)}<div class="guide"><h3>YOUR EQUIP GUIDE</h3>${equipGuide(rec.products)}</div><p class="prototype-note">${rec.status} Product names, directions and descriptions are draft illustrations; test actual formulations before sale.</p></div>`;
+ }
+ if(s===8){
+   const rec=recommendation();
+   html=`<div class="completion-mark">✦</div>`+header(
+     'BUILD COMPLETE',
+     'YOUR FIRST LOADOUT IS <em>READY.</em>',
+     'The sample kit is the product: a small amount of gear to try, a plain-English Equip card, and a clear route into your next Quest.'
+   );
+   html+=`<div class="offer"><span class="tag">FIRST LOADOUT · CONCEPT OFFER</span>${loadoutVisual(rec)}<h2>TRY YOUR FIRST LOADOUT</h2><div class="price">£9.95</div><div class="offer-includes"><div><strong>${rec.products.length===1?'1 focused mini':'2 grooming minis'}</strong>${rec.products.map(p=>p.name).join(' + ')}</div><div><strong>Your Equip card</strong>What each product is, why it’s here and how to use it.</div><div><strong>Your next Quest</strong>Try the gear, report back and refine what comes next.</div></div><div class="inline-offer-items">${rec.products.map(p=>`<span>${p.name} · ${p.type}</span>`).join('')}</div><p><strong>Try the gear before committing to full size.</strong></p><p class="optional-note">Mini sizes, final packaging, postage and price are still being validated.</p><p class="prototype-note">This is a purchase-intent prototype. No payment is taken and there is no live checkout yet.</p><button type="button" class="btn gold" id="buydemo">TRY MY FIRST LOADOUT · £9.95 →</button><p id="buymsg" class="status hidden" role="status">Purchase intent recorded only in this demo screen — no payment was taken. For testing, tell us what made you want to click or what would have stopped you.</p></div><div class="corner-promise"><strong>NOT JUST IN YOUR BATHROOM CABINET.<br>WE’RE IN YOUR CORNER.</strong><p>The point is not to keep selling you more stuff. Try the Loadout first. Then tell us what worked, what didn’t and what changed.</p></div><div class="quest-continue"><span class="tag">AFTER YOU’VE TRIED IT</span><h2>REPORT BACK. REFINE THE BUILD.</h2><p>Your next Quest is practical: tell us what worked, what didn’t and what your hair or beard is doing now. RockGod can then refine the next routine instead of guessing.</p><button type="button" class="btn" id="questdemo">Preview the Quest Report →</button><p id="questmsg" class="status hidden" role="status">Future feature preview: the Quest Report will collect product feedback and what changed, then use that information to refine the next recommendation. No profile, email or personal information is collected here.</p><p class="prototype-note">Saving a Build, order communications and marketing consent will remain separate choices in the eventual store.</p></div>`;
+ }
  $('#content').innerHTML=html;updateNav();
  document.querySelectorAll('[data-key]').forEach(b=>b.onclick=()=>selectAndStay(b.dataset.key,Number(b.dataset.val)));
  document.querySelectorAll('[data-mode]').forEach(b=>b.onclick=()=>{state.mode=b.dataset.mode;setStage(1)});
  document.querySelectorAll('[data-priority]').forEach(b=>b.onclick=()=>{state.priority=b.dataset.priority;render(true)});
  document.querySelectorAll('[data-barrier]').forEach(b=>b.onclick=()=>toggleBarrier(Number(b.dataset.barrier)));
  if($('#buydemo'))$('#buydemo').onclick=()=>$('#buymsg').classList.remove('hidden');
- document.querySelectorAll('[data-wallet]').forEach(b=>b.onclick=()=>$('#buymsg').classList.remove('hidden'));
- if($('#bodywash'))$('#bodywash').onchange=e=>{$('#addonmsg').textContent=e.target.checked?'Optional add-on selected for demo only. Not in the kit; no extra charge or order has been created.':'No extra product is selected.'};
  if($('#questdemo'))$('#questdemo').onclick=()=>$('#questmsg').classList.remove('hidden');
  if(preserve)requestAnimationFrame(()=>window.scrollTo({top:y,behavior:'instant'}));else window.scrollTo({top:0,behavior:'instant'});
 }
