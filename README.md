@@ -2,6 +2,27 @@
 
 V0.7 is the commercial-refinement build created after a critical marketing / e-commerce review.
 
+## Early Access signup
+
+The Loadout result and final concept-offer screen include the Early Access CTA.
+The final navigation button opens the same signup form. Character Creator answers
+remain in browser memory and are not attached to signups.
+
+- Existing onsite company: `VBguQ5` (tracking snippet preserved).
+- Existing live Early Access popup: `RLQs3z`.
+- Existing form list destination: `RwSVFa`.
+- The CTA uses Klaviyo's supported `openForm` queue. Its hosted signup fallback
+  uses the same list. Klaviyo continues to handle consent and confirmation emails.
+- No private API key, new list, custom subscription endpoint or checkout is added.
+
+Popup timing is managed in Klaviyo, not in this repository. In form `RLQs3z`,
+open **Targeting & behavior** and use a 45-second time delay. To ensure visitors
+get that browsing time, disable independent scroll/exit triggers that could open
+the popup sooner. Preserve existing subscriber/dismissal suppression. Review
+mobile visibility separately; the inspected live configuration targets desktop.
+Publish the form after changing its settings. Do not delay the onsite tracking
+script to control popup timing.
+
 ## What changed
 
 - Opening proposition now explains the customer problem and payoff faster.

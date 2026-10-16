@@ -96,13 +96,20 @@
  .offer-includes{grid-template-columns:1fr}
 }
 
+.early-access{max-width:760px;margin:20px auto;text-align:center;border:1px solid var(--gold2);border-radius:9px;padding:28px 18px;background:radial-gradient(ellipse at top,#352719,#171411 65%);scroll-margin-bottom:100px}
+.early-access h2{font-family:Georgia,'Times New Roman',serif;color:var(--gold);font-size:clamp(25px,5vw,36px);line-height:1.1;margin:16px 0}
+.early-access p{color:#e0d7ca;line-height:1.6;max-width:560px;margin:10px auto}
+.early-access .btn{margin:12px 0;max-width:100%;white-space:normal}
+.early-access a{color:var(--gold);text-underline-offset:3px}
+.early-access a:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+.early-access .small{font-size:12px;color:var(--muted)}
 </style>
 </head>
 <body>
 <main class="wrap">
 <header class="header"><div class="brand">RockGod®<small>BUILD THE LOOK · EQUIP THE ROUTINE</small></div><div class="alpha">ALPHA V0.7.1 · DEMO</div></header>
 <section id="content" aria-live="polite"></section>
-<footer class="foot">ROCKGOD® ALPHA V0.7.1 · TEST ONLY · NO PAYMENTS OR PERSONAL DATA COLLECTED</footer>
+<footer class="foot">ROCKGOD® ALPHA V0.7.1 · NO PAYMENTS TAKEN · EARLY ACCESS SIGNUP OPTIONAL</footer>
 </main>
 <div class="bottomnav" id="bottomnav"><div class="bottom-inner"><button class="btn" id="back">← BACK</button><div class="progress-wrap"><div id="step" class="step"></div><div id="progress" class="progress"></div></div><button class="btn gold" id="next">CONTINUE →</button></div></div>
 <script>
@@ -348,6 +355,10 @@ function loadoutVisual(rec){
 
 function productCards(rec){return `<div class="education">${rec.products.map((p,i)=>`<article class="gear"><span class="slot">FIRST LOADOUT · MINI 0${i+1}</span><h3>${p.name}</h3><p class="kind">${p.type} · Working name</p><h4>What is it?</h4><p>${p.what}</p><h4>What does it do?</h4><p>${p.does}</p><h4>Why is it here?</h4><p>${p.why}</p><h4>How do I use it?</h4><p>${p.how}</p></article>`).join('')}</div>`}
 function finalVisual(){const h=state.targetHair,b=state.targetBeard;return `<div class="summary" style="margin-bottom:14px"><div class="side"><img src="${asset('hair',h)}" alt="Target hair reference: ${hair[h]}"><strong>HAIR: ${hair[h]}</strong></div><img class="main" src="${finalAsset(h,b)}" alt="Illustrative combined portrait: ${hair[h]} hair and ${beard[b]} beard" loading="eager" decoding="async" fetchpriority="high"><div class="side"><img class="beard-ref" src="${asset('beard',b)}" alt="Target beard reference: ${beard[b]}"><strong>BEARD: ${beard[b]}</strong></div></div>`}
+// Reuse the live RockGod Early Access form and its existing list/consent flow.
+const earlyAccessFormId='RLQs3z';
+function earlyAccessCTA(){return `<section class="early-access" aria-labelledby="early-access-title"><span class="tag">COMING SOON · EARLY ACCESS</span><h2 id="early-access-title">YOUR LOADOUT IS COMING</h2><p>The first RockGod products are being built now.</p><p>Join Early Access and we’ll let you know when your loadout is ready.</p><button type="button" class="btn gold" data-early-access>JOIN EARLY ACCESS</button><p class="small">Sign up for RockGod Early Access emails. Unsubscribe at any time.</p><p class="small">Form not opening? <a href="https://manage.kmail-lists.com/subscriptions/subscribe?a=VBguQ5&amp;g=RwSVFa" target="_blank" rel="noopener">Open the signup page</a>.</p></section>`}
+function openEarlyAccess(){window._klOnsite=window._klOnsite||[];window._klOnsite.push(['openForm',earlyAccessFormId]);}
 function setStage(n){state.stage=n;if(n>=1)preloadBeard();if(n>=4)prefetchSelectedFinal();render(false)}
 function selectAndStay(key,val){state[key]=val; if(['currentHair','currentBeard'].includes(key)&&state.priority&&!allowedPriorities().includes(state.priority))state.priority=null;if(key==='targetHair'||key==='targetBeard')prefetchSelectedFinal();render(true)}
 function toggleBarrier(val){const i=state.barriers.indexOf(val);if(i>=0)state.barriers.splice(i,1);else if(state.barriers.length<2)state.barriers.push(val);render(true)}
@@ -359,7 +370,7 @@ function render(preserve=false){const y=window.scrollY,s=state.stage;let html=''
      'YOU’RE THE <em>MAIN CHARACTER.</em>',
      'Know the look you want but not the products you need? Show us where you are and where you’re heading. We’ll recommend the first gear to try — and show you exactly how to use it.'
    );
-   html+=`<div class="hero-line">HAIR · BEARD · YOUR BUILD · YOUR QUEST</div><div class="panel quest" style="text-align:center"><span class="tag">YOUR BUILD STARTS HERE</span><h2>Choose your route</h2><p>Are you happy with your current look, or working towards something new?</p><div class="route"><button type="button" class="btn gold" data-mode="change"><span>Looking to Change</span><span>→</span></button><button type="button" class="btn alt" data-mode="keep"><span>Happy Where I Am</span><span>→</span></button></div><p class="small">No photo required. No grooming knowledge required. This Alpha collects no personal data.</p></div>`;
+   html+=`<div class="hero-line">HAIR · BEARD · YOUR BUILD · YOUR QUEST</div><div class="panel quest" style="text-align:center"><span class="tag">YOUR BUILD STARTS HERE</span><h2>Choose your route</h2><p>Are you happy with your current look, or working towards something new?</p><div class="route"><button type="button" class="btn gold" data-mode="change"><span>Looking to Change</span><span>→</span></button><button type="button" class="btn alt" data-mode="keep"><span>Happy Where I Am</span><span>→</span></button></div><p class="small">No photo required. No grooming knowledge required. Your Build stays in this browser. Early Access email signup is optional.</p></div>`;
  }
  if(s===1){
    html=header('CURRENT BUILD · HAIR','WHERE ARE YOU <em>NOW?</em>','Choose your current hair length. The closest match is fine.');
@@ -404,12 +415,16 @@ function render(preserve=false){const y=window.scrollY,s=state.stage;let html=''
    const rec=recommendation();
    html=`<div class="completion-mark">✦</div>`+header(
      'BUILD COMPLETE',
-     'YOUR FIRST LOADOUT IS <em>READY.</em>',
+     'YOUR FIRST LOADOUT IS <em>COMING.</em>',
      'The sample kit is the product: a small amount of gear to try, a plain-English Equip card, and a clear route into your next Quest.'
    );
+   html+=earlyAccessCTA();
    html+=`<div class="offer"><span class="tag">FIRST LOADOUT · CONCEPT OFFER</span>${loadoutVisual(rec)}<h2>TRY YOUR FIRST LOADOUT</h2><div class="price">£9.95</div><div class="offer-includes"><div><strong>${rec.products.length===1?'1 focused mini':'2 grooming minis'}</strong>${rec.products.map(p=>p.name).join(' + ')}</div><div><strong>Your Equip card</strong>What each product is, why it’s here and how to use it.</div><div><strong>Your next Quest</strong>Try the gear, report back and refine what comes next.</div></div><div class="inline-offer-items">${rec.products.map(p=>`<span>${p.name} · ${p.type}</span>`).join('')}</div><p><strong>Try the gear before committing to full size.</strong></p><p class="optional-note">Mini sizes, final packaging, postage and price are still being validated.</p><p class="prototype-note">This is a purchase-intent prototype. No payment is taken and there is no live checkout yet.</p><button type="button" class="btn gold" id="buydemo">TRY MY FIRST LOADOUT · £9.95 →</button><p id="buymsg" class="status hidden" role="status">Purchase intent recorded only in this demo screen — no payment was taken. For testing, tell us what made you want to click or what would have stopped you.</p></div><div class="corner-promise"><strong>NOT JUST IN YOUR BATHROOM CABINET.<br>WE’RE IN YOUR CORNER.</strong><p>The point is not to keep selling you more stuff. Try the Loadout first. Then tell us what worked, what didn’t and what changed.</p></div><div class="quest-continue"><span class="tag">AFTER YOU’VE TRIED IT</span><h2>REPORT BACK. REFINE THE BUILD.</h2><p>Your next Quest is practical: tell us what worked, what didn’t and what your hair or beard is doing now. RockGod can then refine the next routine instead of guessing.</p><button type="button" class="btn" id="questdemo">Preview the Quest Report →</button><p id="questmsg" class="status hidden" role="status">Future feature preview: the Quest Report will collect product feedback and what changed, then use that information to refine the next recommendation. No profile, email or personal information is collected here.</p><p class="prototype-note">Saving a Build, order communications and marketing consent will remain separate choices in the eventual store.</p></div>`;
  }
+ if(s===7)html+=earlyAccessCTA();
  $('#content').innerHTML=html;updateNav();
+ if(s===8)$('#next').textContent='JOIN EARLY ACCESS';
+ document.querySelectorAll('[data-early-access]').forEach(b=>b.onclick=openEarlyAccess);
  document.querySelectorAll('[data-key]').forEach(b=>b.onclick=()=>selectAndStay(b.dataset.key,Number(b.dataset.val)));
  document.querySelectorAll('[data-mode]').forEach(b=>b.onclick=()=>{state.mode=b.dataset.mode;setStage(1)});
  document.querySelectorAll('[data-priority]').forEach(b=>b.onclick=()=>{state.priority=b.dataset.priority;render(true)});
@@ -419,7 +434,7 @@ function render(preserve=false){const y=window.scrollY,s=state.stage;let html=''
  if(preserve)requestAnimationFrame(()=>window.scrollTo({top:y,behavior:'instant'}));else window.scrollTo({top:0,behavior:'instant'});
 }
 $('#back').onclick=()=>{if(state.stage>0)setStage(state.stage-1)};
-$('#next').onclick=()=>{if($('#next').disabled)return;if(state.stage===2&&state.mode==='keep'){state.targetHair=state.currentHair;state.targetBeard=state.currentBeard;setStage(4);return}if(state.stage===8){$('#buydemo').click();return}setStage(state.stage+1)};
+$('#next').onclick=()=>{if($('#next').disabled)return;if(state.stage===2&&state.mode==='keep'){state.targetHair=state.currentHair;state.targetBeard=state.currentBeard;setStage(4);return}if(state.stage===8){openEarlyAccess();return}setStage(state.stage+1)};
 render(false);
 </script>
 <script async type='text/javascript' src='https://static.klaviyo.com/onsite/js/VBguQ5/klaviyo.js?company_id=VBguQ5'></script>
